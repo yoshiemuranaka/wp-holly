@@ -1,0 +1,44 @@
+// \\//\\//\\//\\//
+//	VARIABLES   \\
+//\\//\\//\\//\\//
+
+$white: #fff;
+$black: #343535;
+
+$pink: #c1aecc;
+$blue: #acc9cc;
+$grey: #d3d3d3;
+$orange: #d8b28d;
+
+$default-font: $black;
+
+
+/************
+TYPE
+************/
+
+html,
+body {
+  background-color: $white;
+
+  color: $default-font;
+  font-family: 'Abel', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.site {
+	min-height: 100vh;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+}
+
+.site-content {
+	flex: 1;
+	-webkit-flex: 1;
+}
+
+h1 {
+  font-size: 2em;
+}
