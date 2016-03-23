@@ -39,3 +39,18 @@ add_filter( 'get_the_archive_title', function ($title) {
 	return $title;
 });
 
+/*
+adding shortcodes
+*/
+function callout_shortcode( $atts, $content = null ) {
+	return '<div class="callout"><h1>' . $content . '</h1></div>';
+}
+add_shortcode( 'callout', 'callout_shortcode' );
+
+function cta_shortcode( $atts, $content = null ) {
+	return '<button class="cta">' . $content . '</button';
+}
+add_shortcode( 'cta', 'cta_shortcode' );
+
+
+

@@ -3,7 +3,7 @@
 //\\//\\//\\//\\//
 
 $white: #fff;
-$black: #343535;
+$black: #464646;
 
 $pink: #c1aecc;
 $blue: #acc9cc;
@@ -41,4 +41,24 @@ body {
 
 h1 {
   font-size: 2em;
+  line-height: 1.5em;
 }
+
+button {
+	min-width: 200px; 
+	font-family: 'Abel', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 1em;
+	text-shadow: none;
+	border: none;
+	box-shadow: none;
+	&:hover,
+	&:focus {
+
+	}
+}
+
+
+
+
+
+
