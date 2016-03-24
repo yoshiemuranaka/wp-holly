@@ -1,11 +1,41 @@
 .content-area {
   max-width: 800px;
   margin: 0 auto;
+  padding-top: 50px;
 }
 
-.callout {
-  padding: 0 5%;
+.content-area {
+	.callout {
+	  padding: 0 5%;
 
-  font-size: 20px;
-  text-align: center;
+	  font-size: 20px;
+	  text-align: center;
+	  margin-bottom: 2em;
+	}
+	.cta {
+		margin: 0 auto;
+		background-color: $pink;
+		color: $white;
+		font-size: 18px;
+	}
+
+	.feature {
+		margin: 150px 0;
+	}
+
+	.feature-media {
+		margin-bottom: 50px;
+	}
+
+	.feature-excerpt {
+		margin-bottom: 50px;
+	}
+
+	.feature-button {
+		background-color: $blue;
+		margin: 0 auto;
+		font-size: 18px;
+	}
+
 }
+

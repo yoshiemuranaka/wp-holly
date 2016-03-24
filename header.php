@@ -14,7 +14,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<h1>Holly Thompson</h1>
+			<h1 class="no-wrap">Holly Thompson</h1>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

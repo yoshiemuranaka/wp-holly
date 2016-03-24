@@ -10,6 +10,7 @@ $blue: #acc9cc;
 $grey: #d3d3d3;
 $orange: #d8b28d;
 
+$primary-button: $pink;
 $default-font: $black;
 
 
@@ -37,28 +38,88 @@ body {
 .site-content {
 	flex: 1;
 	-webkit-flex: 1;
+  @include mq(small-only) {
+    padding: 0 3%;
+  }
 }
 
 h1 {
   font-size: 2em;
   line-height: 1.5em;
+  margin-bottom: 1em;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+  &:link,
+  &:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+a:hover, 
+a:focus,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
 button {
-	min-width: 200px; 
-	font-family: 'Abel', 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 1em;
-	text-shadow: none;
-	border: none;
-	box-shadow: none;
-	&:hover,
-	&:focus {
+  display: inline-block;
+  min-width: 200px;
+  padding: 0.8em 0;
 
-	}
+  border: none;
+  border-radius: 5px;
+  outline: none;
+
+  background-color: $primary-button;
+
+  color: $white;
+  font-family: 'Abel', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: none;
+
+  box-shadow: none;
+  &:hover,
+  &:focus,
+  &:active {
+    border: none;
+
+    text-shadow: none;
+
+    box-shadow: none;
+  }
 }
 
 
 
+/************
+UTILITIES
+************/
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+.highlight {
+  &.blue {
+    background-color: $blue;
+  }
+  &.pink {
+    background-color: $pink;
+  }
+  &.orange {
+    background-color: $orange;
+  }
+}
 
 
 

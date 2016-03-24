@@ -1,0 +1,159 @@
+//////////////////////
+//  MEDIA QUERIES  ///
+/////////////////////
+
+@mixin mq($point) {
+  @if $point == medium {
+    @media only screen and (min-width: 769px) {
+      @content;
+    }
+  }
+  @else if $point == small-only {
+    @media only screen and (max-width: 768px) {
+      @content
+    }
+  }
+}
+
+//////////////////
+//  GRID  ///////
+////////////////
+
+
+@mixin clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: '';
+
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.grid {
+  @include clearfix();
+
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.col {
+  @include mq(medium) {
+    margin-bottom: 0;
+  }
+
+  display: inline;
+  float: left;
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+@include mq(medium) {
+  .col.half {
+    width: 50%;
+  } 
+
+  .col.one-third {
+    width: 33.3333%
+  }
+
+  .col.two-thirds {
+    width: 66.6666%
+  }
+}
+
+@include mq(small-only) {
+  .col.sm-two-thirds{
+    width: 66.6666%;
+  }
+  .col.sm-one-third {
+    width: 33.3333%
+  }
+}
+
+.col.alpha {
+  text-align: left;
+}
+
+.col.omega {
+  text-align: left;
+  @include mq(medium) {
+    text-align: right;
+  }
+}
+
+///////////////////
+//  BOX SHADOW  ///
+//////////////////
+
+@mixin boxshadow($color) {
+  box-shadow: 0 1px 5px $color;
+
+  -webkit-box-shadow: 0 1px 5px $color;
+  -moz-box-shadow: 0 1px 5px $color;
+}
+
+////////////////////
+//  TRANSITION  ///
+//////////////////
+
+@mixin transition($value, $speed, $ease) {
+  -moz-transition: $value $speed $ease;
+  -ms-transition: $value $speed $ease;
+  -webkit-transition: $value $speed $ease;
+  transition: $value $speed $ease;
+}
+
+@mixin animation($value, $speed, $ease) {
+  -webkit-animation: $value $speed $ease;
+  animation: $value $speed $ease;
+}
+
+////////////////////
+//  KEYFRAMES  ///
+//////////////////
+
+@keyframes menuAnimation {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  50% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+//////////////////
+//  FLEXBOX  ////
+////////////////
+
+@mixin flexbox($direction, $justify)
+{
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -o-flexbox;
+    display: flex;
+
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    -o-flex-direction: $direction;
+    flex-direction: $direction;
+    
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    -o-justify-content: $justify;
+    justify-content: $justify;
+}
