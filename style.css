@@ -343,11 +343,12 @@ header.site-header .menu-icon.close {
   padding: 0 5%;
   font-size: 16px;
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 75px;
 }
 @media only screen and (min-width: 769px) {
   .content-area .callout {
     font-size: 20px;
+    margin-bottom: 150px;
   }
 }
 .content-area .cta {
@@ -356,13 +357,13 @@ header.site-header .menu-icon.close {
   color: #fff;
   font-size: 18px;
 }
-.content-area .feature {
-  margin: 150px 0;
-}
 .content-area .feature-media {
   margin-bottom: 50px;
 }
 .content-area .feature-excerpt {
+  margin-bottom: 50px;
+  font-size: 20px;
+  line-height: 24px;
   margin-bottom: 50px;
 }
 .content-area .feature-cta {

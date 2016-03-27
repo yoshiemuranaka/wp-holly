@@ -51,9 +51,10 @@ adding shortcodes
 */
 function callout_shortcode( $atts, $content = null ) {
 	$a = shortcode_atts( array(
-        'link' => 'home'
+        'link' => 'home',
+        'button' => 'Learn More'
     ), $atts );
-	$button = '<a href="' . get_site_url() . '/' . $a['link'] . '" class="button cta">Learn More</a>';
+	$button = '<a href="' . get_site_url() . '/' . $a['link'] . '" class="button cta">' . $a['button'] . '</a>';
 	
 	return '<div class="callout"><h1>' . $content . '</h1>' . $button . '</div>';
 
@@ -79,7 +80,7 @@ function feature_shortcode($atts, $content = null ) {
 	$post = get_post($post_id);
 	$url = get_site_url() . '/' . $a['title'];
 
-	$header = '<h1 class="feature-header">' . $post->post_title . '</h1>';
+	$header = '<h1 class="feature-header"><a href="' . $url . '">' . $post->post_title . '</a></h1>';
 	$media = '<div class="feature-media">' . get_the_post_thumbnail($post) . '</div>';
 	$excerpt = '<div class="feature-excerpt">' . $post->post_excerpt . '</div>';
 	$button = '<div class="feature-cta"><a class="button feature-button" href="' . $url . '">Learn More</a></div>';
