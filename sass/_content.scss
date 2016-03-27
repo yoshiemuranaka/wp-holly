@@ -1,16 +1,23 @@
 .content-area {
   max-width: 800px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding: 20px 0 125px;
+  @include mq(medium) {
+  	padding: 50px 0 125px;
+
+  }
 }
 
 .content-area {
 	.callout {
 	  padding: 0 5%;
 
-	  font-size: 20px;
+	  font-size: 16px;
 	  text-align: center;
 	  margin-bottom: 2em;
+	  @include mq(medium) {
+	  	font-size: 20px
+	  }
 	}
 	.cta {
 		margin: 0 auto;
@@ -29,6 +36,11 @@
 
 	.feature-excerpt {
 		margin-bottom: 50px;
+	}
+
+	.feature-cta {
+		text-align: center;
+		width: 100%;
 	}
 
 	.feature-button {

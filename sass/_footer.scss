@@ -8,3 +8,25 @@ footer.site-footer {
   color: $default-font;
   text-align: center;
 }
+
+
+
+/************
+FOOTER BOTTOM
+************/
+
+.site {
+	min-height: 100vh;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+}
+
+.site-content {
+	flex: 1;
+	-webkit-flex: 1;
+  @include mq(small-only) {
+    padding: 0 3%;
+  }
+}

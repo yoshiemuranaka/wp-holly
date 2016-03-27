@@ -10,6 +10,14 @@ function theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+function load_vendor_javascript() {
+	wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/modernizr-custom.min.js');
+  wp_register_script('interactions', get_stylesheet_directory_uri() . '/js/interactions.js', 'jquery', false );
+
+	wp_enqueue_script('interactions');
+}
+add_action( 'wp_enqueue_scripts', 'load_vendor_javascript' );
+
 
 /*
 removing admin bar
@@ -22,7 +30,7 @@ add_filter('show_admin_bar', '__return_false');
 /*
 removing autofilter that adds empty <p> tags 
 */
-remove_filter('the_content', 'wpautop');
+// remove_filter('the_content', 'wpautop');
 
 /*
 removing 'Category' title prefix
@@ -74,7 +82,7 @@ function feature_shortcode($atts, $content = null ) {
 	$header = '<h1 class="feature-header">' . $post->post_title . '</h1>';
 	$media = '<div class="feature-media">' . get_the_post_thumbnail($post) . '</div>';
 	$excerpt = '<div class="feature-excerpt">' . $post->post_excerpt . '</div>';
-	$button = '<a class="button feature-button" href="' . $url . '">Learn More</a>';
+	$button = '<div class="feature-cta"><a class="button feature-button" href="' . $url . '">Learn More</a></div>';
 
 	return '<div class="feature">' . $header . $media . $excerpt . $button . '</div>';
 }
