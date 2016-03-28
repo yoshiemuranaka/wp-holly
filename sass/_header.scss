@@ -1,15 +1,13 @@
 header.site-header {
 	background-color: $white;
 	text-align: center;
-	// height: 100px;
 	font-size: 10px;
 	@include transition(all, 0.2s, ease);
 	@include mq(medium) {
 		font-size: 20px;
-		// text-align: center;
 	}
 	h1 {
-		font-family: 'Righteous';
+		font-family: $font-family-2;
 		color: $pink;
 		line-height: 100px;
 		font-size: 4em;
@@ -17,7 +15,10 @@ header.site-header {
 	}
 
 	.logo {
-		padding-top: 50px;
+		padding-top: 0;
+		@include mq(medium) {
+			padding-top: 50px;
+		}
 		display: inline-block;
 	}
 

@@ -76,14 +76,20 @@
   }
 }
 
-.col.alpha {
+.col.left-align {
   text-align: left;
 }
 
-.col.omega {
+.col.right-align {
   text-align: left;
   @include mq(medium) {
     text-align: right;
+  }
+}
+
+.col.sm-center {
+  @include mq(small-only) {
+    text-align: center;
   }
 }
 

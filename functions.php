@@ -18,6 +18,25 @@ function load_vendor_javascript() {
 }
 add_action( 'wp_enqueue_scripts', 'load_vendor_javascript' );
 
+/*
+register post formats
+*/
+add_action( 'after_setup_theme', 'wpsites_child_theme_posts_formats', 11 );
+function wpsites_child_theme_posts_formats(){
+ add_theme_support( 'post-formats', array(
+    'video',
+    'audio',
+    'gallery',
+    'image',
+    'link',
+    'quote'
+    ) );
+}
+
+/*
+enable shortcodes in excerpt
+*/
+add_filter('the_excerpt', 'do_shortcode');
 
 /*
 removing admin bar
@@ -27,10 +46,6 @@ function remove_admin_login_header() {
 	remove_action('wp_head', '_admin_bar_bump_cb');
 }
 add_filter('show_admin_bar', '__return_false');
-/*
-removing autofilter that adds empty <p> tags 
-*/
-// remove_filter('the_content', 'wpautop');
 
 /*
 removing 'Category' title prefix
@@ -61,13 +76,16 @@ function callout_shortcode( $atts, $content = null ) {
 }
 add_shortcode( 'callout', 'callout_shortcode' );
 
-function cta_shortcode( $atts, $content = null ) {
+function link_shortcode( $atts, $content = null ) {
 	$a = shortcode_atts( array(
         'link' => 'home'
     ), $atts );
-	return '<a href="' . get_site_url() . '/' . $a['link'] . '"><a class="button cta">' . $content . '</a></a>';
+	$link = '<p><a class="link-style" href="' . get_site_url() . '/' . $a['link'] . '">' . $content . '</a></p>';	
+	return $link;
+
 }
-add_shortcode( 'cta', 'cta_shortcode' );
+add_shortcode( 'link', 'link_shortcode' );
+
 
 function feature_shortcode($atts, $content = null ) {
 	$a = shortcode_atts( array(

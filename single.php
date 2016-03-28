@@ -16,7 +16,7 @@ get_header(); ?>
 		while ( have_posts() ) : the_post();
 
 			get_template_part( 'template-parts/content', get_post_format() );
-			echo get_the_post_thumbnail();
+			// echo get_the_post_thumbnail();
 			// the_post_navigation();
 			echo next_post_link( '%link', 'Next post', TRUE );
 

@@ -106,16 +106,22 @@ table {
     width: 33.3333%;
   }
 }
-.col.alpha {
+.col.left-align {
   text-align: left;
 }
 
-.col.omega {
+.col.right-align {
   text-align: left;
 }
 @media only screen and (min-width: 769px) {
-  .col.omega {
+  .col.right-align {
     text-align: right;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .col.sm-center {
+    text-align: center;
   }
 }
 
@@ -139,20 +145,26 @@ html,
 body {
   background-color: #fff;
   color: #464646;
-  font-family: 'Abel', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Abel", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 16px;
 }
 
 h1 {
   font-size: 2em;
   line-height: 1.5em;
-  margin-bottom: 1.25em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1.25em;
+  margin-bottom: 0.5em;
 }
 
 p {
   font-size: 1.25em;
   line-height: 1.5em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 a {
@@ -197,7 +209,7 @@ button {
   outline: none;
   background-color: #c1aecc;
   color: #fff;
-  font-family: 'Abel', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Abel", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   text-align: center;
   text-shadow: none;
@@ -219,6 +231,14 @@ button:active {
   border: none;
   text-shadow: none;
   box-shadow: none;
+}
+
+audio {
+  display: inline-block;
+  margin: 25px 0;
+}
+audio + audio {
+  margin-top: 0;
 }
 
 /************
@@ -253,15 +273,20 @@ header.site-header {
   }
 }
 header.site-header h1 {
-  font-family: 'Righteous';
+  font-family: "Righteous", "Ariel", sans-serif;
   color: #c1aecc;
   line-height: 100px;
   font-size: 4em;
   margin-bottom: 0;
 }
 header.site-header .logo {
-  padding-top: 50px;
+  padding-top: 0;
   display: inline-block;
+}
+@media only screen and (min-width: 769px) {
+  header.site-header .logo {
+    padding-top: 50px;
+  }
 }
 header.site-header .hamburger-menu {
   position: absolute;
@@ -328,6 +353,9 @@ header.site-header .menu-icon.close {
   position: relative;
 }
 
+/************
+CONTENT AREA
+************/
 .content-area {
   max-width: 800px;
   margin: 0 auto;
@@ -335,7 +363,7 @@ header.site-header .menu-icon.close {
 }
 @media only screen and (min-width: 769px) {
   .content-area {
-    padding: 50px 0 125px;
+    padding: 75px 0 125px;
   }
 }
 
@@ -351,20 +379,14 @@ header.site-header .menu-icon.close {
     margin-bottom: 150px;
   }
 }
-.content-area .cta {
-  margin: 0 auto;
-  background-color: #c1aecc;
-  color: #fff;
-  font-size: 18px;
-}
 .content-area .feature-media {
   margin-bottom: 50px;
 }
 .content-area .feature-excerpt {
   margin-bottom: 50px;
-  font-size: 20px;
-  line-height: 24px;
-  margin-bottom: 50px;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
 }
 .content-area .feature-cta {
   text-align: center;
@@ -376,13 +398,72 @@ header.site-header .menu-icon.close {
   font-size: 18px;
 }
 
-footer.site-footer {
+/************
+HEADER
+************/
+.content-area .page-header {
+  margin-bottom: 100px;
+}
+.content-area .page-title {
+  margin-bottom: 0;
+}
+
+/************
+POST
+************/
+.post {
+  margin-bottom: 2.5em;
+}
+.post .entry-header h1 {
+  margin-bottom: 0;
+}
+.post .entry-content {
+  margin: 1em 0 0;
+}
+.post .content-excerpt {
+  padding: 0;
+}
+@media only screen and (min-width: 769px) {
+  .post .content-excerpt {
+    padding-left: 25px;
+  }
+}
+
+.site-footer {
   width: 100%;
   margin: 0 auto;
   padding: 50px 0;
   background-color: #d3d3d3;
   color: #464646;
   text-align: center;
+}
+.site-footer h1 {
+  font-family: "Righteous", "Ariel", sans-serif;
+  margin-bottom: 0;
+}
+.site-footer .copyright {
+  font-size: 10px;
+}
+.site-footer .logo-area {
+  padding: 0;
+}
+@media only screen and (min-width: 769px) {
+  .site-footer .logo-area {
+    padding-right: 25px;
+  }
+}
+.site-footer .footer-menu {
+  padding: 0;
+  border: none;
+}
+@media only screen and (min-width: 769px) {
+  .site-footer .footer-menu {
+    padding-left: 25px;
+    border-left: 2px solid #464646;
+  }
+}
+.site-footer .footer-menu li {
+  padding: 3px 0;
 }
 
 /************
@@ -399,6 +480,7 @@ FOOTER BOTTOM
 .site-content {
   flex: 1;
   -webkit-flex: 1;
+  padding: 0 15px;
 }
 @media only screen and (max-width: 768px) {
   .site-content {

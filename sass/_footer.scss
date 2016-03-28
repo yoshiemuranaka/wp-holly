@@ -1,4 +1,4 @@
-footer.site-footer {
+.site-footer {
   width: 100%;
   margin: 0 auto;
   padding: 50px 0;
@@ -7,6 +7,36 @@ footer.site-footer {
 
   color: $default-font;
   text-align: center;
+
+  h1 {
+    font-family: $font-family-2;
+    margin-bottom: 0;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+
+  .logo-area {
+    padding: 0;
+    @include mq(medium) {
+      padding-right: 25px;
+    }
+  }
+
+  .footer-menu {
+    @include mq(medium) {
+      padding-left: 25px;
+      border-left: 2px solid $black;
+    }
+
+    padding: 0;
+    border: none;
+  
+    li {
+      padding: 3px 0;
+    }
+  }
 }
 
 
@@ -26,6 +56,7 @@ FOOTER BOTTOM
 .site-content {
 	flex: 1;
 	-webkit-flex: 1;
+  padding: 0 15px;
   @include mq(small-only) {
     padding: 0 3%;
   }

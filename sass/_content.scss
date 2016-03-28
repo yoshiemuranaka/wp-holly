@@ -1,10 +1,12 @@
+/************
+CONTENT AREA
+************/
 .content-area {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px 0 125px;
   @include mq(medium) {
-  	padding: 50px 0 125px;
-
+  	padding: 75px 0 125px;
   }
 }
 
@@ -20,17 +22,6 @@
 	 		margin-bottom: 150px;
 	  }
 	}
-	.cta {
-		margin: 0 auto;
-		background-color: $pink;
-		color: $white;
-		font-size: 18px;
-	}
-
-	.feature {
-		// margin-bottom: 0;
-
-	}
 
 	.feature-media {
 		margin-bottom: 50px;
@@ -38,12 +29,9 @@
 
 	.feature-excerpt {
 		margin-bottom: 50px;
-		font-size: 20px;
-		line-height: 24px;
-		margin-bottom: 50px;
-		// @include mq(medium) {
-		// 	margin-bottom: 150px;
-		// }
+		font-size: 1.25em;
+		line-height: 1.5em;
+		margin-bottom: 1.5em;
 	}
 
 	.feature-cta {
@@ -56,6 +44,44 @@
 		margin: 0 auto;
 		font-size: 18px;
 	}
-
 }
+
+/************
+HEADER
+************/
+
+.content-area {
+	.page-header {
+		margin-bottom: 100px;
+	}
+	.page-title {
+		margin-bottom: 0;
+	}
+}
+
+
+/************
+POST
+************/
+
+.post { 
+	margin-bottom: 2.5em;
+	.entry-header h1 {
+		margin-bottom: 0;
+	}
+	.entry-content {
+		margin: 1em 0 0;
+	}
+
+	.content-excerpt {
+		padding: 0;
+		@include mq(medium) {
+			padding-left: 25px;
+		}
+	}
+}
+
+
+
+
 

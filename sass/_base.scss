@@ -13,6 +13,8 @@ $orange: #d8b28d;
 $primary-button: $pink;
 $default-font: $black;
 
+$font-family-1: 'Abel', 'Helvetica Neue', Helvetica, sans-serif;
+$font-family-2: 'Righteous', 'Ariel', sans-serif;
 
 /************
 TYPE
@@ -23,20 +25,26 @@ body {
   background-color: $white;
 
   color: $default-font;
-  font-family: 'Abel', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: $font-family-1;
   font-size: 16px;
 }
 
 h1 {
   font-size: 2em;
   line-height: 1.5em;
-  margin-bottom: 1.25em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1.25em;
+  margin-bottom: 0.5em;
 }
 
 p {
   font-size: 1.25em;
   line-height: 1.5em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 
@@ -60,14 +68,12 @@ a.link-style,
 a.link-style:link,
 a.link-style:visited {
   border-bottom: 2px solid $black;
-  // text-decoration: underline;
 }
 
 a.link-style:hover,
 a.link-style:focus,
 a.link-style:active {
   border-color: $pink;
-  // text-decoration: underline;
   color: $pink;
 }
 
@@ -89,7 +95,7 @@ button {
   background-color: $primary-button;
 
   color: $white;
-  font-family: 'Abel', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: $font-family-1;
   font-size: 18px;
   text-align: center;
   text-shadow: none;
@@ -103,6 +109,14 @@ button {
     text-shadow: none;
 
     box-shadow: none;
+  }
+}
+
+audio {
+  display: inline-block;
+  margin: 25px 0;
+  + audio {
+    margin-top: 0;
   }
 }
 

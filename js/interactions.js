@@ -9,6 +9,7 @@ Holly.Interactions = {
 	events: function() {
 		jQuery('.hamburger-menu').bind('click', this.menu);
 		jQuery('.menu-icon.close').bind('click', this.menu);
+		jQuery('.main-navigation .overlay').bind('click', this.menu);
 	},
 	
 	menu: function() {
