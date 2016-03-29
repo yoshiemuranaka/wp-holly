@@ -181,6 +181,7 @@ a:focus,
 a:active {
   color: inherit;
   text-decoration: none;
+  outline: none;
 }
 
 a.link-style,
@@ -322,6 +323,22 @@ header.site-header .menu-icon.close {
   margin-top: 15px;
 }
 
+/************
+ANIMATE HEADER
+************/
+.site-header {
+  -moz-transition: all 0.5s cubic-bezier(0.6, 0.2, 0.1, 1);
+  -ms-transition: all 0.5s cubic-bezier(0.6, 0.2, 0.1, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.6, 0.2, 0.1, 1);
+  transition: all 0.5s cubic-bezier(0.6, 0.2, 0.1, 1);
+}
+.site-header.smaller {
+  font-size: 12px;
+}
+
+/************
+NAVIGATION
+************/
 .main-navigation ul {
   display: block !important;
 }
