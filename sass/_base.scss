@@ -110,6 +110,16 @@ button {
 
     box-shadow: none;
   }
+
+  &.pink {
+    background-color: $primary-button;
+  }
+  &.blue {
+    background-color: $blue;
+  }
+  &.orange {
+    background-color: $orange;
+  }
 }
 
 audio {

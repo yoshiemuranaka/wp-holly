@@ -25,5 +25,6 @@ Holly.Interactions = {
 
 jQuery(document).ready(function($){
 	Holly.Interactions.init();
+	window.sr = ScrollReveal().reveal('.js-scrollreveal', {scale: 1, duration: 800, viewFactor: 0.05}, 500);
 });
 

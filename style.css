@@ -232,6 +232,27 @@ button:active {
   text-shadow: none;
   box-shadow: none;
 }
+a.button.pink,
+input[type="button"].pink,
+input[type="reset"].pink,
+input[type="submit"].pink,
+button.pink {
+  background-color: #c1aecc;
+}
+a.button.blue,
+input[type="button"].blue,
+input[type="reset"].blue,
+input[type="submit"].blue,
+button.blue {
+  background-color: #acc9cc;
+}
+a.button.orange,
+input[type="button"].orange,
+input[type="reset"].orange,
+input[type="submit"].orange,
+button.orange {
+  background-color: #d8b28d;
+}
 
 audio {
   display: inline-block;
@@ -262,10 +283,6 @@ header.site-header {
   background-color: #fff;
   text-align: center;
   font-size: 10px;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
 }
 @media only screen and (min-width: 769px) {
   header.site-header {
@@ -319,10 +336,10 @@ header.site-header .menu-icon.close {
   background-color: #d3d3d3;
   height: 100%;
   z-index: 10;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -moz-transition: all 0.5s cubic-bezier(0.6, 0.2, 0.1, 1);
+  -ms-transition: all 0.5s cubic-bezier(0.6, 0.2, 0.1, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.6, 0.2, 0.1, 1);
+  transition: all 0.5s cubic-bezier(0.6, 0.2, 0.1, 1);
 }
 .main-navigation.active {
   right: 0;
@@ -376,6 +393,14 @@ CONTENT AREA
 @media only screen and (min-width: 769px) {
   .content-area .callout {
     font-size: 20px;
+    margin-bottom: 150px;
+  }
+}
+.content-area .feature {
+  margin-bottom: 75px;
+}
+@media only screen and (min-width: 769px) {
+  .content-area .feature {
     margin-bottom: 150px;
   }
 }
@@ -440,6 +465,7 @@ POST
 .site-footer h1 {
   font-family: "Righteous", "Ariel", sans-serif;
   margin-bottom: 0;
+  font-size: 1.5em;
 }
 .site-footer .copyright {
   font-size: 10px;

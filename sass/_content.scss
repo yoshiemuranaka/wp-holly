@@ -23,6 +23,13 @@ CONTENT AREA
 	  }
 	}
 
+	.feature {
+		margin-bottom: 75px;
+		@include mq(medium) {
+			margin-bottom: 150px;
+		}
+	}
+
 	.feature-media {
 		margin-bottom: 50px;
 	}

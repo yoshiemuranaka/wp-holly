@@ -11,9 +11,12 @@ function theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 function load_vendor_javascript() {
-	wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/modernizr-custom.min.js');
+	// wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/modernizr-custom.min.js');
+	wp_register_script('scrollreveal', get_stylesheet_directory_uri() . '/js/scrollreveal.js');
   wp_register_script('interactions', get_stylesheet_directory_uri() . '/js/interactions.js', 'jquery', false );
-
+	
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('scrollreveal');
 	wp_enqueue_script('interactions');
 }
 add_action( 'wp_enqueue_scripts', 'load_vendor_javascript' );
@@ -67,11 +70,12 @@ adding shortcodes
 function callout_shortcode( $atts, $content = null ) {
 	$a = shortcode_atts( array(
         'link' => 'home',
-        'button' => 'Learn More'
+        'button' => 'Learn More',
+        'color' => 'pink'
     ), $atts );
-	$button = '<a href="' . get_site_url() . '/' . $a['link'] . '" class="button cta">' . $a['button'] . '</a>';
+	$button = '<a href="' . get_site_url() . '/' . $a['link'] . '" class="button cta ' . $a['color'] . '">' . $a['button'] . '</a>';
 	
-	return '<div class="callout"><h1>' . $content . '</h1>' . $button . '</div>';
+	return '<div class="callout js-scrollreveal"><h1>' . $content . '</h1>' . $button . '</div>';
 
 }
 add_shortcode( 'callout', 'callout_shortcode' );
@@ -80,7 +84,7 @@ function link_shortcode( $atts, $content = null ) {
 	$a = shortcode_atts( array(
         'link' => 'home'
     ), $atts );
-	$link = '<p><a class="link-style" href="' . get_site_url() . '/' . $a['link'] . '">' . $content . '</a></p>';	
+	$link = '<p><a class="link-style" href="' . get_site_url() . '/' . $a['link'] . '">' . do_shortcode($content) . '</a></p>';	
 	return $link;
 
 }
@@ -103,9 +107,17 @@ function feature_shortcode($atts, $content = null ) {
 	$excerpt = '<div class="feature-excerpt">' . $post->post_excerpt . '</div>';
 	$button = '<div class="feature-cta"><a class="button feature-button" href="' . $url . '">Learn More</a></div>';
 
-	return '<div class="feature">' . $header . $media . $excerpt . $button . '</div>';
+	return '<div class="feature js-scrollreveal">' . $header . $media . $excerpt . $button . '</div>';
 }
 add_shortcode('feature', 'feature_shortcode');
 
+function scrollreveal_shortcode( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+        'link' => 'home'
+    ), $atts );
+	$link = '<div class="js-scrollreveal"' . do_shortcode($content) . '</div>';	
+	return $link;
 
+}
+add_shortcode( 'scrollreveal', 'scrollreveal_shortcode' );
 
