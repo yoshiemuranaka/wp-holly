@@ -1,23 +1,24 @@
 header.site-header {
 	background-color: $white;
-	text-align: center;
+	text-align: left;
 	font-size: 10px;
+	padding: 0 3%;
+	@include boxshadow($grey);
 	@include mq(medium) {
 		font-size: 20px;
+		box-shadow: none;
+		text-align: center;
+		padding: 0;
 	}
 	h1 {
 		font-family: $font-family-2;
 		color: $pink;
-		line-height: 100px;
-		font-size: 4em;
+		line-height: 2em;
+		font-size: 3.15em;
 		margin-bottom: 0;
 	}
 
 	.logo {
-		padding-top: 0;
-		@include mq(medium) {
-			padding-top: 50px;
-		}
 		display: inline-block;
 	}
 
@@ -25,6 +26,10 @@ header.site-header {
 		position: absolute;
 		right: 20px;
 		cursor: pointer;
+		h1 {
+			font-size: 20px;
+			line-height: 3em;
+		}
 	}
 
 	.menu-icon.close {
@@ -36,7 +41,7 @@ header.site-header {
 		border: 1px solid $black;
 		border-radius: 50%;
 		padding: 15px;
-		margin-top: 15px;
+		margin-top: 35px;
 	}
 
 }
@@ -45,11 +50,26 @@ header.site-header {
 ANIMATE HEADER
 ************/
 .site-header {
-	@include transition(all, 0.5s, cubic-bezier(0.6, 0.2, 0.1, 1));
-	&.smaller {
-		font-size: 12px;
-	}
+  @include transition(all, 0.3s, cubic-bezier(0.6, 0.5, 0.1, 1));
+  @include mq(medium) {
+    padding-top: 50px;
+    &.smaller {
+      @include boxshadow($grey);
+
+      padding-top: 0;
+
+      font-size: 10px;
+    }
+  }
+
+  position: fixed;
+  width: 100%;
+
+  background-color: $white;
+
+  z-index: 10;
 }
+
 
 /************
 NAVIGATION
@@ -81,9 +101,12 @@ NAVIGATION
 		float: none;
 		display: block;
 		position: relative;
-		font-size: 2em;
+		font-size: 25px;
 		padding: 15px 0 15px 10px;
 		border-bottom: 1px solid $black;
+		@include mq(medium) {
+			font-size: 30px;
+		}
 	}
 
 	.overlay {
@@ -103,6 +126,5 @@ NAVIGATION
 		z-index: 12;
 		position: relative;
 	}
-
 
 }

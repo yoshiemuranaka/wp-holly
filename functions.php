@@ -107,7 +107,9 @@ function feature_shortcode($atts, $content = null ) {
 	$excerpt = '<div class="feature-excerpt">' . $post->post_excerpt . '</div>';
 	$button = '<div class="feature-cta"><a class="button feature-button" href="' . $url . '">Learn More</a></div>';
 
-	return '<div class="feature js-scrollreveal">' . $header . $media . $excerpt . $button . '</div>';
+	// return '<div class="feature js-scrollreveal">' . $header . $media . $excerpt . $button . '</div>';
+	return '<div class="feature js-scrollreveal">' . $media . $excerpt . $button . '</div>';
+
 }
 add_shortcode('feature', 'feature_shortcode');
 

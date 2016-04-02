@@ -15,7 +15,10 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<h1 class="logo no-wrap"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Holly Thompson</a></h1>
-			<a class="hamburger-menu"><h1 style="font-size:2em">&#9776;</h1></a>
+			<a class="hamburger-menu">
+			<h1 class="reveal-small">&#9776;</h1>
+			<h1 class="hide-small">menu</h1>
+			</a>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

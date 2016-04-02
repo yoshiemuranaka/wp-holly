@@ -1,18 +1,32 @@
 /************
 CONTENT AREA
 ************/
+
 .content-area {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px 0 125px;
+  padding: 100px 0 125px;
   @include mq(medium) {
-  	padding: 75px 0 125px;
+  	padding: 170px 0 125px;
   }
+
+	a,
+	a:link,
+	a:visited {
+	  border-bottom: 2px solid $black;
+	}
+
+	a:hover,
+	a:focus,
+	a:active {
+	  border-color: $pink;
+	  color: $pink;
+	}
 }
 
 .content-area {
 	.callout {
-	  padding: 0 5%;
+	  padding: 0;
 
 	  font-size: 16px;
 	  text-align: center;
@@ -20,6 +34,10 @@ CONTENT AREA
 	  @include mq(medium) {
 	  	font-size: 20px;
 	 		margin-bottom: 150px;
+	  	padding: 0 5%;
+	  // text-align: center;
+
+
 	  }
 	}
 

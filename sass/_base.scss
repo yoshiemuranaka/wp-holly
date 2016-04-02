@@ -65,18 +65,18 @@ a:active {
   outline: none;
 }
 
-a.link-style,
-a.link-style:link,
-a.link-style:visited {
-  border-bottom: 2px solid $black;
-}
+// a.link-style,
+// a.link-style:link,
+// a.link-style:visited {
+//   border-bottom: 2px solid $black;
+// }
 
-a.link-style:hover,
-a.link-style:focus,
-a.link-style:active {
-  border-color: $pink;
-  color: $pink;
-}
+// a.link-style:hover,
+// a.link-style:focus,
+// a.link-style:active {
+//   border-color: $pink;
+//   color: $pink;
+// }
 
 
 
@@ -89,13 +89,13 @@ button {
   min-width: 200px;
   padding: 0.8em 0;
 
-  border: none;
+  border: none !important;
   border-radius: 5px;
   outline: none;
 
   background-color: $primary-button;
 
-  color: $white;
+  color: $white !important;
   font-family: $font-family-1;
   font-size: 18px;
   text-align: center;
@@ -139,6 +139,18 @@ UTILITIES
 
 .no-wrap {
 	white-space: nowrap;
+}
+.hide-small{
+  display: block;
+  @include mq(small-only) {
+    display: none;
+  }
+}
+.reveal-small {
+  display: none;
+  @include mq(small-only) {
+    display: block;
+  }
 }
 
 .highlight {

@@ -10,7 +10,8 @@ Holly.Interactions = {
 		jQuery('.hamburger-menu').bind('click', this.menu);
 		jQuery('.menu-icon.close').bind('click', this.menu);
 		jQuery('.main-navigation .overlay').bind('click', this.menu);
-		jQuery('window').bind('scroll', this.animateHeader);
+		jQuery(window).bind('scroll', this.animateHeader);
+		// jQuery(window).on('scroll', function(){console.log("yo")})
 	},
 	
 	menu: function() {
@@ -24,20 +25,19 @@ Holly.Interactions = {
 	},
 
 	animateHeader: function() {
-		console.log('yo');
 		var distanceY = window.pageYOffset || document.documentElement.scrollTop;
-		var shrinkOn = 150;
+		var shrinkOn = 40;
 		var header = jQuery('.site-header');
 
-		if(small === false) {
+		// if(small === false) {
 			if(distanceY > shrinkOn) {
 				header.addClass('smaller');
 			} else {
-				if(header.hasClass('smaller')) {
+				// if(header.hasClass('smaller')) {
 					header.removeClass('smaller');
-				}
+				// }
 			}
-		}     
+		// }     
 	}
 };
 
