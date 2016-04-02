@@ -125,7 +125,7 @@ table {
   }
 }
 
-@keyframes menuAnimation {
+@keyframes overlayAnimation {
   0% {
     display: none;
     opacity: 0;
@@ -285,6 +285,13 @@ UTILITIES
   background-color: #d8b28d;
 }
 
+html {
+  overflow: visible;
+}
+html.overlay-active {
+  overflow: hidden;
+}
+
 header.site-header {
   background-color: #fff;
   text-align: left;
@@ -327,10 +334,12 @@ header.site-header .menu-icon.close {
   cursor: pointer;
   display: block;
   margin: 0 auto;
-  border: 1px solid #464646;
-  border-radius: 50%;
   padding: 15px;
-  margin-top: 35px;
+  opacity: 0;
+  -moz-transition: opacity 1.5s ease-in;
+  -ms-transition: opacity 1.5s ease-in;
+  -webkit-transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in;
 }
 
 /************
@@ -367,15 +376,14 @@ NAVIGATION
 }
 
 .main-navigation {
-  width: 200px;
+  width: 100%;
   display: block;
   position: fixed;
   top: 0;
-  right: -200px;
-  text-align: left;
+  right: -100%;
+  text-align: center;
   background-color: #d3d3d3;
-  height: 100%;
-  z-index: 10;
+  z-index: 11;
   -moz-transition: all 0.5s cubic-bezier(0.6, 0.2, 0.1, 1);
   -ms-transition: all 0.5s cubic-bezier(0.6, 0.2, 0.1, 1);
   -webkit-transition: all 0.5s cubic-bezier(0.6, 0.2, 0.1, 1);
@@ -387,18 +395,26 @@ NAVIGATION
 .main-navigation.active .overlay {
   display: block;
 }
+.main-navigation.active .menu-icon.close {
+  opacity: 1;
+}
 .main-navigation li {
   float: none;
   display: block;
   position: relative;
   font-size: 25px;
-  padding: 15px 0 15px 10px;
+  padding: 15px 0 15px;
   border-bottom: 1px solid #464646;
+  cursor: pointer;
 }
 @media only screen and (min-width: 769px) {
   .main-navigation li {
     font-size: 30px;
   }
+}
+.main-navigation li:hover {
+  background-color: #c1aecc;
+  color: #fff;
 }
 .main-navigation .overlay {
   display: none;
@@ -407,8 +423,7 @@ NAVIGATION
   height: 100%;
   width: 100%;
   background-color: #fff;
-  opacity: 0.7;
-  z-index: 11;
+  opacity: 0.9;
 }
 .main-navigation .menu-main-menu-container {
   z-index: 12;

@@ -1,3 +1,10 @@
+html {
+	overflow: visible;
+	&.overlay-active {
+		overflow: hidden;
+	}
+}
+
 header.site-header {
 	background-color: $white;
 	text-align: left;
@@ -38,10 +45,9 @@ header.site-header {
 		cursor: pointer;
 		display: block;
 		margin: 0 auto;
-		border: 1px solid $black;
-		border-radius: 50%;
 		padding: 15px;
-		margin-top: 35px;
+		opacity: 0;
+  	@include transition(opacity, 1.5s, ease-in);
 	}
 
 }
@@ -79,15 +85,14 @@ NAVIGATION
 }
 
 .main-navigation {
-	width: 200px;
+	width: 100%;
 	display: block;
 	position: fixed;
 	top: 0;
-	right: -200px;
-	text-align: left;
+	right: -100%;
+	text-align: center;
 	background-color: $grey;
-	height: 100%;
-	z-index: 10;
+	z-index: 11;
 	@include transition(all, 0.5s, cubic-bezier(0.6, 0.2, 0.1, 1));
 
 	&.active {
@@ -96,16 +101,25 @@ NAVIGATION
 		.overlay {
 			display: block;
 		}
+
+		.menu-icon.close {
+			opacity: 1;
+		}
 	}
 	li {
 		float: none;
 		display: block;
 		position: relative;
 		font-size: 25px;
-		padding: 15px 0 15px 10px;
+		padding: 15px 0 15px;
 		border-bottom: 1px solid $black;
+		cursor: pointer;
 		@include mq(medium) {
 			font-size: 30px;
+		}
+		&:hover {
+			background-color: $pink;
+			color: $white;
 		}
 	}
 
@@ -117,9 +131,11 @@ NAVIGATION
 	  width: 100%;
 
 	  background-color: $white;
+	  opacity: 0.9;
 
-	  opacity: 0.7;
-	  z-index: 11;
+	  // z-index: 11;
+    // @include animation(overlayAnimation, 0.3s, ease-in);
+
 	}
 
 	.menu-main-menu-container {

@@ -16,6 +16,7 @@ Holly.Interactions = {
 	
 	menu: function() {
 		jQuery('.main-navigation').toggleClass('active');
+		jQuery('html').toggleClass('overlay-active');
 	},
 
 	filter: function() {
