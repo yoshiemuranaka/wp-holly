@@ -40,11 +40,10 @@ header.site-header {
 	}
 
 	.menu-icon.close {
-		z-index: 13;
+		z-index: 14;
 		position: relative;
 		cursor: pointer;
-		display: block;
-		margin: 0 auto;
+		// display: block;
 		padding: 15px;
 		opacity: 0;
   	@include transition(opacity, 1.5s, ease-in);
@@ -91,7 +90,6 @@ NAVIGATION
 	top: 0;
 	right: -100%;
 	text-align: center;
-	background-color: $grey;
 	z-index: 11;
 	@include transition(all, 0.5s, cubic-bezier(0.6, 0.2, 0.1, 1));
 
@@ -138,10 +136,18 @@ NAVIGATION
 
 	}
 
-	.menu-main-menu-container {
+	.menu-options {
+		background-color: $grey;
+		text-align: right;
 		z-index: 13;
 		position: relative;
+	}
+
+	.menu-main-menu-container {
+		position: relative;
 		background-color: $grey;
+		text-align: center;
+		width: 100%;
 	}
 
 }

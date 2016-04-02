@@ -23,8 +23,10 @@
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="overlay"></div>
-			<img class="menu-icon close" src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon--close.svg">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<div class="menu-options">
+				<img class="menu-icon close" src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon--close.svg">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			</div>
 		</nav><!-- #site-navigation -->
 	
 	</header><!-- #masthead -->
