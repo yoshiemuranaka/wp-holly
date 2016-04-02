@@ -20,9 +20,14 @@ Holly.Interactions = {
 	},
 
 	filter: function() {
-		//removing empty p and br tags
-		jQuery('.site-main p:empty').remove();
-		jQuery('.site-main br').remove();		
+		//removing p tags with &nbsp
+		jQuery('.site-main p').each(function(){
+			console.log(this)
+			var p = jQuery(this);
+			if(p.html() === '&nbsp;'){
+				p.remove();
+			}
+		});
 	},
 
 	animateHeader: function() {

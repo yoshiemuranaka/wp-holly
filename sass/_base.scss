@@ -8,7 +8,8 @@ $black: #464646;
 $pink: #c1aecc;
 $blue: #acc9cc;
 $grey: #d3d3d3;
-$orange: #d8b28d;
+$orange: #CAA480;
+$orange-darker: #AD8560;
 
 $primary-button: $pink;
 $default-font: $black;
@@ -165,5 +166,10 @@ UTILITIES
   }
 }
 
+//removing empty p tags and br in site content
+.site-main p:empty,
+.site-main br {
+  display: none;
+}
 
 

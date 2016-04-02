@@ -1,7 +1,10 @@
 .site-footer {
   width: 100%;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 25px 0;
+  @include mq(medium) {
+    padding: 50px 0;
+  }
 
   background-color: $grey;
 

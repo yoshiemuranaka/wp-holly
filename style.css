@@ -239,7 +239,7 @@ input[type="button"].orange,
 input[type="reset"].orange,
 input[type="submit"].orange,
 button.orange {
-  background-color: #d8b28d;
+  background-color: #CAA480;
 }
 
 audio {
@@ -282,7 +282,12 @@ UTILITIES
   background-color: #c1aecc;
 }
 .highlight.orange {
-  background-color: #d8b28d;
+  background-color: #CAA480;
+}
+
+.site-main p:empty,
+.site-main br {
+  display: none;
 }
 
 html {
@@ -424,10 +429,12 @@ NAVIGATION
   width: 100%;
   background-color: #fff;
   opacity: 0.9;
+  z-index: 12;
 }
 .main-navigation .menu-main-menu-container {
-  z-index: 12;
+  z-index: 13;
   position: relative;
+  background-color: #d3d3d3;
 }
 
 /************
@@ -436,7 +443,7 @@ CONTENT AREA
 .content-area {
   max-width: 800px;
   margin: 0 auto;
-  padding: 100px 0 125px;
+  padding: 100px 0 50px;
 }
 @media only screen and (min-width: 769px) {
   .content-area {
@@ -446,18 +453,19 @@ CONTENT AREA
 .content-area a,
 .content-area a:link,
 .content-area a:visited {
-  border-bottom: 2px solid #464646;
+  color: #CAA480;
+  border-bottom: 2px solid #CAA480;
 }
 .content-area a:hover,
 .content-area a:focus,
 .content-area a:active {
-  border-color: #c1aecc;
-  color: #c1aecc;
+  border-color: #AD8560;
+  color: #AD8560;
 }
 
 .content-area .callout {
   padding: 0;
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   margin-bottom: 75px;
 }
@@ -499,7 +507,12 @@ CONTENT AREA
 HEADER
 ************/
 .content-area .page-header {
-  margin-bottom: 100px;
+  margin-bottom: 75px;
+}
+@media only screen and (min-width: 769px) {
+  .content-area .page-header {
+    margin-bottom: 100px;
+  }
 }
 .content-area .page-title {
   margin-bottom: 0;
@@ -512,7 +525,20 @@ POST
   margin-bottom: 2.5em;
 }
 .post .entry-header h1 {
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.15em;
+}
+.post .entry-header a,
+.post .entry-header a:link,
+.post .entry-header a:visited {
+  color: #464646;
+  border-bottom: 2px solid #464646;
+}
+.post .entry-header a:hover,
+.post .entry-header a:focus,
+.post .entry-header a:active {
+  border-color: #AD8560;
+  color: #AD8560;
 }
 .post .entry-content {
   margin: 1em 0 0;
@@ -529,10 +555,15 @@ POST
 .site-footer {
   width: 100%;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 25px 0;
   background-color: #d3d3d3;
   color: #464646;
   text-align: center;
+}
+@media only screen and (min-width: 769px) {
+  .site-footer {
+    padding: 50px 0;
+  }
 }
 .site-footer h1 {
   font-family: "Righteous", "Ariel", sans-serif;

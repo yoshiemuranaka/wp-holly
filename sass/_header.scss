@@ -133,14 +133,15 @@ NAVIGATION
 	  background-color: $white;
 	  opacity: 0.9;
 
-	  // z-index: 11;
+	  z-index: 12;
     // @include animation(overlayAnimation, 0.3s, ease-in);
 
 	}
 
 	.menu-main-menu-container {
-		z-index: 12;
+		z-index: 13;
 		position: relative;
+		background-color: $grey;
 	}
 
 }
