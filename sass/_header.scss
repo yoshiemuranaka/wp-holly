@@ -31,7 +31,7 @@ header.site-header {
 
 	.hamburger-menu {
 		position: absolute;
-		right: 20px;
+		right: 3%;
 		cursor: pointer;
 		h1 {
 			font-size: 20px;
@@ -84,70 +84,78 @@ NAVIGATION
 }
 
 .main-navigation {
-	width: 100%;
-	display: block;
-	position: fixed;
-	top: 0;
-	right: -100%;
-	text-align: center;
-	z-index: 11;
-	@include transition(all, 0.5s, cubic-bezier(0.6, 0.2, 0.1, 1));
+  @include transition(all, 0.5s, cubic-bezier(0.6, 0.2, 0.1, 1));
 
-	&.active {
-		right: 0;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
 
-		.overlay {
-			display: block;
-		}
+  text-align: center;
 
-		.menu-icon.close {
-			opacity: 1;
-		}
-	}
-	li {
-		float: none;
-		display: block;
-		position: relative;
-		font-size: 25px;
-		padding: 15px 0 15px;
-		border-bottom: 1px solid $black;
-		cursor: pointer;
-		@include mq(medium) {
-			font-size: 30px;
-		}
-		&:hover {
-			background-color: $pink;
-			color: $white;
-		}
-	}
+  z-index: 11;
+  &.active {
+    right: 0;
+    .overlay {
+      display: block;
+    }
+    .menu-icon.close {
+      opacity: 1;
+    }
+  }
+  li {
+    @include mq(medium) {
+      font-size: 30px;
+    }
 
-	.overlay {
-	  display: none;
-	  position: fixed;
-	  left: 0;
-	  height: 100%;
-	  width: 100%;
+    display: block;
+    position: relative;
+    float: none;
+    padding: 15px 0 15px;
 
-	  background-color: $white;
-	  opacity: 0.9;
+    border-bottom: 1px solid $black;
 
-	  z-index: 12;
+    font-size: 25px;
+
+    cursor: pointer;
+    &:first-child {
+      border-top: 1px solid $black;
+    }
+    &:hover {
+      background-color: $pink;
+
+      color: $white;
+    }
+  }
+  .overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: $white;
+
+    opacity: 0.9;
+    z-index: 12;
     // @include animation(overlayAnimation, 0.3s, ease-in);
+  }
+  .menu-options {
+    position: relative;
 
-	}
+    background-color: $grey;
 
-	.menu-options {
-		background-color: $grey;
-		text-align: right;
-		z-index: 13;
-		position: relative;
-	}
+    text-align: right;
 
-	.menu-main-menu-container {
-		position: relative;
-		background-color: $grey;
-		text-align: center;
-		width: 100%;
-	}
+    z-index: 13;
+  }
+  .menu-main-menu-container {
+    position: relative;
+    width: 100%;
 
+    background-color: $grey;
+
+    text-align: center;
+  }
 }

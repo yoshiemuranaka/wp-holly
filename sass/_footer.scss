@@ -41,6 +41,18 @@
       padding: 3px 0;
     }
   }
+
+  a,
+  a:link,
+  a:visited {
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: underline;
+  }
 }
 
 
